@@ -7,13 +7,13 @@ const backBtn = document.querySelector('.back')
 const taskContainer = document.querySelector('.section')
 const inputValue = document.getElementById('taskValue')
     const submitThing = document.querySelector('.submit-btn')
+
+    let allTextContents
+let cliked;
 addBtn.addEventListener('click',function(e){
 card.style.display = 'none';
 submitContainer.style.display = 'block'
 
-
-
-        
             submitThing.addEventListener('click',function(e){
                 if(inputValue.value !== ''){
                 card.style.display = 'block';
@@ -33,19 +33,22 @@ submitContainer.style.display = 'block'
         </div>
 </div>`
         taskContainer.insertAdjacentHTML('afterbegin',html)
-        window.localStorage.setItem(inputValue.value,`${html}`)
+
+        window.localStorage.setItem(inputValue.value, html)
+
         html = ``
         const trash = document.querySelector('.trash');
-
         trash.addEventListener('click',function(e){
+
+            let click = e.target.parentElement.previousElementSibling.textContent
+    
             e.target.parentElement.parentElement.style.paddingTop = '0px'
+
+            cliked = allTextContents.find(cliked => {
+                return cliked === click
+            })
+            localStorage.removeItem(cliked)
             e.target.parentElement.parentElement.innerHTML = ''
-            // if(e.target.parentElement.parentElement.previousElementSibling !== null){
-            //     e.target.parentElement.parentElement.previousElementSibling.style.paddingLeft = '0px'
-            // }else{
-            //     return
-            // }
-            //remove padding top on all chidren
         })
         inputValue.value = ''
     }
@@ -106,9 +109,28 @@ backBtn.addEventListener('click',function(){
     submitContainer.style.display = 'none'
 })
 
+console.log(localStorage)
 Array.from(localStorage).forEach((_,i) => {
     const key = localStorage.key(i)
-    console.log(localStorage.getItem(key))
     taskContainer.insertAdjacentHTML('afterbegin',localStorage.getItem(key))
+    const trash = document.querySelector('.trash');
+    
+    trash.addEventListener('click',function(e){
+        let click = e.target.parentElement.previousElementSibling.textContent
+        e.target.parentElement.parentElement.style.paddingTop = '0px'
+        // cliked = allTextContents.find(cliked => {
+        //     return cliked == click
+        // })
+        localStorage.removeItem(click)
+        e.target.parentElement.parentElement.innerHTML = ''
+    })
 })
+// if(taskContainer.children){
+//     const listContainer = document.querySelectorAll('.list-container')
+//    console.log(listContainer)
 
+//    allTextContents =  Array.from(listContainer).map(listContainer => {
+//        return listContainer.children[1].textContent
+//    })
+// }
+// console.log(allTextContents)
