@@ -1,0 +1,64 @@
+.add-list-container {
+  width: 370px;
+  height: 350px;
+  background: linear-gradient(to right, #0c344b, #0e2653);
+  position: relative;
+  display: none;
+}
+
+.add-list-container .header {
+  height: 100%;
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.add-list-container .header .back {
+  padding-left: 15px;
+  font-size: 28px;
+  padding-top: 12px;
+  cursor: pointer;
+  color: #2eb6e4;
+}
+
+.add-list-container .header p {
+  padding-top: 19px;
+  color: white;
+}
+
+.add-list-container input {
+  border: none;
+  border-bottom: 3px #f7f7f7 solid;
+  outline: none;
+  background-color: transparent;
+  color: white;
+}
+
+.add-list-container .design {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+::placeholder {
+  color: white;
+}
+
+.submit-btn {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 50px;
+  background-color: #3cb0e6;
+  text-transform: uppercase;
+  outline: none;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+/*# sourceMappingURL=add.min.css.map */

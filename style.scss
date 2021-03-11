@@ -47,7 +47,7 @@ body{
             outline: none;
             border: none;
             font-size: 55px;
-            background-color: orange;
+            background-color: rgb(40, 172, 172);
             color: white;
             cursor: pointer;
         }
@@ -62,14 +62,9 @@ body{
             display: flex;
             justify-content: space-between;
             margin-right: 0;
-            .task{
-                width: 250px;
-                display: flex;
-                justify-content:  flex-start;
-            }
+        
             .check{
                 padding-left: 10px;
-                padding-top: 1.8px;
             }
         }
         .trash{
@@ -78,6 +73,21 @@ body{
         }
     }
 }
+.task{
+    justify-self:  flex-start;
+    width: 100%;
+    margin-right: 30px;
+    // position: relative;
+    // border-top: 1.3px solid black;
+ }
+//  .cheked{
+//     border-top: 1.3px solid black;
+//     width: 100%;
+//     color: gray;
+//     height: 100%;
+//     display: flex;
+//     align-items:center;
+// }
 input[type='checkbox'] {
     width:16px;
     height:16px;

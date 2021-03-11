@@ -12,6 +12,7 @@
     <title>To do list</title>
     <link rel='stylesheet' href='css/style.css'>
     <link rel='shortcut icon' href=' type=' image/x-icon'>
+    <link rel="stylesheet" href="css/add.css">
 </head>
 
 <body>
@@ -56,8 +57,18 @@
 
       
 
-    <div class="text-box">
-        <input id="taskValue" type="text">
+    
+    <div class="add-list-container">
+      <div class="header">
+        <ion-icon class="back" name="arrow-back-outline"></ion-icon>
+
+        <p>Add new thing</p>
+      </div>
+      <input id="taskValue" class=" design" type="text" placeholder="Task">
+
+        <button class="submit-btn">
+            add your thing
+        </button>
     </div>
 
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
