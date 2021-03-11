@@ -1,6 +1,7 @@
 .add-list-container {
   width: 370px;
   height: 350px;
+  background: -webkit-gradient(linear, left top, right top, from(#0c344b), to(#0e2653));
   background: linear-gradient(to right, #0c344b, #0e2653);
   position: relative;
   display: none;
@@ -9,9 +10,15 @@
 .add-list-container .header {
   height: 100%;
   width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .add-list-container .header .back {
@@ -39,7 +46,20 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+::-webkit-input-placeholder {
+  color: white;
+}
+
+:-ms-input-placeholder {
+  color: white;
+}
+
+::-ms-input-placeholder {
+  color: white;
 }
 
 ::placeholder {
@@ -50,7 +70,8 @@
   position: absolute;
   top: 65%;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   width: 200px;
   height: 50px;
   background-color: #3cb0e6;

@@ -114,8 +114,19 @@ Array.from(localStorage).forEach((_,i) => {
     const key = localStorage.key(i)
     taskContainer.insertAdjacentHTML('afterbegin',localStorage.getItem(key))
     const trash = document.querySelector('.trash');
-    
+
     trash.addEventListener('click',function(e){
+        /*
+        e.target
+          <ion-icon class="trash-can" name="trash-outline"></ion-icon>
+    e.target.parent
+        <div class="trash">
+            <ion-icon class="trash-can" name="trash-outline"></ion-icon>
+        </div>
+
+        sibling
+            <div class="task">${inputValue.value}</div>
+         */
         let click = e.target.parentElement.previousElementSibling.textContent
         e.target.parentElement.parentElement.style.paddingTop = '0px'
         // cliked = allTextContents.find(cliked => {
