@@ -46,7 +46,6 @@ submitContainer.style.display = 'block'
             //     return
             // }
             //remove padding top on all chidren
-        
         })
         inputValue.value = ''
     }
