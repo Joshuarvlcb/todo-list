@@ -33,6 +33,7 @@ submitContainer.style.display = 'block'
         </div>
 </div>`
         taskContainer.insertAdjacentHTML('afterbegin',html)
+        window.localStorage.setItem(inputValue.value,`${html}`)
         html = ``
         const trash = document.querySelector('.trash');
 
@@ -104,5 +105,11 @@ todaysDate.textContent = currentDate(new Date())
 backBtn.addEventListener('click',function(){
     card.style.display = 'block';
     submitContainer.style.display = 'none'
+})
+
+Array.from(localStorage).forEach((_,i) => {
+    const key = localStorage.key(i)
+    console.log(localStorage.getItem(key))
+    taskContainer.insertAdjacentHTML('afterbegin',localStorage.getItem(key))
 })
 
